@@ -3,6 +3,7 @@ package com.example.demo.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -19,4 +20,9 @@ public class Account {
     private Integer age;
     private String email;
 
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "account_role"
+            , joinColumns = {@JoinColumn(name = "account_id")}
+            , inverseJoinColumns = {@JoinColumn(name = "role_id")})
+    private List<Role> roles;
 }

@@ -14,8 +14,8 @@ public class Role {
     private Long id;
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "account_id", referencedColumnName = "id")
-    private Account account;
+//    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "account_id", referencedColumnName = "id")
+//    private Account account;
 
 }
